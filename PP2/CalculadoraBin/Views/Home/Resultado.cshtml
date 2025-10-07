@@ -1,0 +1,77 @@
+@model CalculadoraBin.Models.CalculadoraModel
+@{
+    ViewData["Title"] = "Resultado";
+}
+
+<h1 class="text-center">Resultados de la Calculadora Binaria</h1>
+
+<div class="card p-3 mt-3">
+    <p><strong>Binario 1:</strong> @Model.Bin1Byte</p>
+    <p><strong>Binario 2:</strong> @Model.Bin2Byte</p>
+    <hr />
+
+    <table class="table table-bordered text-center">
+        <thead class="table-light">
+            <tr>
+                <th>Operación</th>
+                <th>Binario</th>
+                <th>Octal</th>
+                <th>Decimal</th>
+                <th>Hexadecimal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>a</td>
+                <td>@Model.Bin1Byte</td>
+                <td>@Model.BinToOctal(Model.Bin1Byte)</td>
+                <td>@Model.BinToDecimal(Model.Bin1Byte)</td>
+                <td>@Model.BinToHex(Model.Bin1Byte)</td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td>@Model.Bin2Byte</td>
+                <td>@Model.BinToOctal(Model.Bin2Byte)</td>
+                <td>@Model.BinToDecimal(Model.Bin2Byte)</td>
+                <td>@Model.BinToHex(Model.Bin2Byte)</td>
+            </tr>
+            <tr>
+                <td>a AND b</td>
+                <td>@Model.And</td>
+                <td>@Model.BinToOctal(Model.And)</td>
+                <td>@Model.BinToDecimal(Model.And)</td>
+                <td>@Model.BinToHex(Model.And)</td>
+            </tr>
+            <tr>
+                <td>a OR b</td>
+                <td>@Model.Or</td>
+                <td>@Model.BinToOctal(Model.Or)</td>
+                <td>@Model.BinToDecimal(Model.Or)</td>
+                <td>@Model.BinToHex(Model.Or)</td>
+            </tr>
+            <tr>
+                <td>a XOR b</td>
+                <td>@Model.Xor</td>
+                <td>@Model.BinToOctal(Model.Xor)</td>
+                <td>@Model.BinToDecimal(Model.Xor)</td>
+                <td>@Model.BinToHex(Model.Xor)</td>
+            </tr>
+            <tr>
+                <td>a + b</td>
+                <td>@Model.Suma</td>
+                <td>@Model.BinToOctal(Model.Suma)</td>
+                <td>@Model.BinToDecimal(Model.Suma)</td>
+                <td>@Model.BinToHex(Model.Suma)</td>
+            </tr>
+            <tr>
+                <td>a * b</td>
+                <td>@Model.Multiplicacion</td>
+                <td>@Model.BinToOctal(Model.Multiplicacion)</td>
+                <td>@Model.BinToDecimal(Model.Multiplicacion)</td>
+                <td>@Model.BinToHex(Model.Multiplicacion)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<a href="/" class="btn btn-secondary mt-3">Volver</a>

@@ -1,0 +1,35 @@
+﻿@model CalculadoraBin.Models.CalculadoraModel
+@{
+    ViewData["Title"] = "Calculadora Binaria";
+}
+
+<h1 class="text-center">Calculadora Binaria</h1>
+
+<form method="post" asp-action="Calcular">
+    <div class="mb-3">
+        <label for="Binario1">Primer número binario (2,4,6 u 8 bits):</label>
+        <input asp-for="Binario1" class="form-control" placeholder="Ej: 1010" maxlength="8" />
+        <span class="text-danger" asp-validation-for="Binario1"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="Binario2">Segundo número binario (2,4,6 u 8 bits):</label>
+        <input asp-for="Binario2" class="form-control" placeholder="Ej: 111" maxlength="8" />
+        <span class="text-danger" asp-validation-for="Binario2"></span>
+    </div>
+
+    <p class="text-muted">
+        Se calcularán automáticamente todas las operaciones: AND, OR, XOR, Suma y Multiplicación
+    </p>
+
+    <button type="submit" class="btn btn-primary w-100">Calcular</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
