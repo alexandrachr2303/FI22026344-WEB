@@ -39,6 +39,9 @@ La estrategia de **Code First** sería útil para trabajar con bases NoSQL, ya q
 Con **Database First** está más pensado para bases de datos relacionales con tablas y estructuras fijas. Usarlo en NoSQL puede resultar complicado, porque estas bases son dinámicas y no siempre tienen un esquema definido.  
 
 Las **Foreign Keys**, en las bases NoSQL, no existen de manera automática. Si se necesitaran relaciones entre los datos, se pueden manejar con referencias o documentos, a diferencia de las bases SQL, donde las Foreign Keys son directas y se crean de manera automática.
+
+
+
 ---
 
 
